@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            padding: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        #randomLetterContainer {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px;
+            background-color: green;
+            color:white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Paises</h2>
+
+    <form id="paises">
+        <div>
+            <button onclick="generateRandomLetter()" type="button">Generar letra aleatoria</button>
+            <span id="randomLetterContainer"></span>
+            <label for="letra">Ingresa un país con la siguiente letra:</label>
+            <input type="text" id="nombre" name="nombre" pattern="^[a-zA-Z]+$" title="Solo letras">
+            <button type="button" onclick="validaPais()">Enviar</button>
+
+
+        </div>
+    </form>
+
+    <script src="scriptspaises.js"></script>
+
+</body>
+</html>

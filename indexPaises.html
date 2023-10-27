@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="paises.css">
+
     <title>Paises</title>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,7 +16,7 @@
         label {
             display: block;
             margin-bottom: 8px;
-            padding: auto;
+            padding: 15px;
         }
 
         input {
@@ -27,13 +30,18 @@
             font-size: 24px;
             font-weight: bold;
         }
+        #span {
+            font-size: 24px;
+            font-weight: bold;
+        }
         button {
             padding: 10px;
             background-color: green;
             color:white;
-            border: none;
+            border: 5px;
             border-radius: 4px;
             cursor: pointer;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -48,10 +56,18 @@
             <label for="letra">Ingresa un país con la siguiente letra:</label>
             <input type="text" id="nombre" name="nombre" pattern="^[a-zA-Z]+$" title="Solo letras">
             <button type="button" onclick="validaPais()">Enviar</button>
-
-
+            
         </div>
     </form>
+
+    <button type="button" onclick="openModals()">Abrir Modal</button>
+
+    <div id="modal">
+        <p>Esta es la capital</p>
+        <span id="capital"></span>
+        <button type="button" onclick="closeModals()">Cerrar</button>
+    </div>
+     
 
     <script src="scriptspaises.js"></script>
 

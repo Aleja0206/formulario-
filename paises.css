@@ -1,0 +1,27 @@
+#modal {
+  background-color: #fff;
+  width: 400px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+  #modal p {    
+    text-align: center;
+  }
+  #modal button {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }

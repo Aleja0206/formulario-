@@ -1,3 +1,7 @@
+var puntaje_final=0
+var contador_intentos= 10
+
+
 function openModals(capital){
     document.getElementById("modal").style.display = "block";
     document.getElementById("capital").textContent=capital;
@@ -5,6 +9,9 @@ function openModals(capital){
 function closeModals(){
     document.getElementById("modal").style.display = "none";
 }
+
+
+
 async function getCapital(nombrecapital) {
     
     var myHeaders = new Headers();
@@ -31,6 +38,21 @@ function generateRandomLetter() {
     var randomLetter = letras.charAt(Math.floor(Math.random() * letras.length));
     document.getElementById("randomLetterContainer").textContent = randomLetter;
 }
+function contadorIntentos(){
+    contador_intentos--;
+    document.getElementById("contador").textContent=contador_intentos
+}
+
+function actualizarValor(resultado) {
+    if (contador_intentos==0){
+        puntaje_final=0
+        contador_intentos=10
+        
+    }
+    puntaje_final=puntaje_final+resultado;
+    document.getElementById("puntaje").textContent=puntaje_final
+
+}
 
 function validaPais(){
     var nombrePais=document.getElementById("nombre").value;
@@ -46,10 +68,11 @@ function validaPais(){
     }
     getCountry(nombrePais).then((result) => {
         const capital=(buscacapital(result,"capital"))
-        console.log(capital)
-        openModals( capital)
+        actualizarValor(5);
+        openModals(capital)
     }).catch((error) => {
         console.log(error)
+        actualizarValor(-3);
         alert("la respuesta es incorrecta")
     });
     

@@ -48,25 +48,30 @@
 <body>
 
     <h2>Paises</h2>
-
+    <label for="letra">Intentos: </label>
+    <span id="contador"></span>
+    <label for="letra">Puntaje: </label>
+    <span id="puntaje"></span>
     <form id="paises">
         <div>
             <button onclick="generateRandomLetter()" type="button">Generar letra aleatoria</button>
             <span id="randomLetterContainer"></span>
             <label for="letra">Ingresa un país con la siguiente letra:</label>
             <input type="text" id="nombre" name="nombre" pattern="^[a-zA-Z]+$" title="Solo letras">
-            <button type="button" onclick="validaPais()">Enviar</button>
-            
+            <button type="button" onclick="validaPais(), contadorIntentos(), generateRandomLetter() ">Enviar</button>
+            <button type="button" onclick="openModals()">Abrir Modal</button>
+
+        </div>
+        <div id="modal">
+            <p>Esta es la capital</p>
+            <span id="capital"></span>
+            <br>
+            <button type="button" onclick="closeModals()">Cerrar</button>
         </div>
     </form>
 
-    <button type="button" onclick="openModals()">Abrir Modal</button>
 
-    <div id="modal">
-        <p>Esta es la capital</p>
-        <span id="capital"></span>
-        <button type="button" onclick="closeModals()">Cerrar</button>
-    </div>
+   
      
 
     <script src="scriptspaises.js"></script>

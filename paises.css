@@ -15,6 +15,12 @@
   #modal p {    
     text-align: center;
   }
+  #modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
   #modal button {
     background-color: green;
     color: #fff;

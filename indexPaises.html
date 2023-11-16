@@ -56,9 +56,11 @@
         <div>
             <button onclick="generateRandomLetter()" type="button">Generar letra aleatoria</button>
             <span id="randomLetterContainer"></span>
-            <label for="letra">Ingresa un país con la siguiente letra:</label>
+            <label for="letra">Ingresa un país que empiece con la siguiente letra:</label>
             <input type="text" id="nombre" name="nombre" pattern="^[a-zA-Z]+$" title="Solo letras">
-            <button type="button" onclick="validaPais(), contadorIntentos(), generateRandomLetter() ">Enviar</button>
+            <label for="letra">Ingresa una ciudad con la siguiente letra:</label>
+            <input type="text" id="ciudad" name="ciudad" pattern="^[a-zA-Z]+$" title="Solo letras">
+            <button type="button" onclick="validaPais(), contadorIntentos(),validaCiudad() , generateRandomLetter() ">Enviar</button>
             <button type="button" onclick="openModals()">Abrir Modal</button>
 
         </div>
@@ -67,6 +69,12 @@
             <span id="capital"></span>
             <br>
             <button type="button" onclick="closeModals()">Cerrar</button>
+        </div>
+        <div id="modal1">
+            <p>Tu puntaje es:</p>
+            <span id="Puntaje"></span>
+            <br>
+            <button type="button" onclick="closeModals1()">Cerrar</button>
         </div>
     </form>
 

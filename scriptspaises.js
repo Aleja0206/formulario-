@@ -121,14 +121,16 @@ function buscacapital (object, llave){
     return object[0][llave][0]
 }
 async function getciudad(){
+    var nombreCiudad=document.getElementById("ciudad").value;
+    var randomLetter=document.getElementById("randomLetterContainer").textContent;
     var myHeaders = new Headers();
-    myHeaders.append("x-api-key", "HVBLGZcH3P2N0oJJETBw/g==ONrkKh20pIoY1k1w");
+    myHeaders.append("x-api-key", "TOKEN");
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'};    
 
-    fetch("https://api.api-ninjas.com/v1/city?name=bogota", requestOptions)
+    fetch("https://api.api-ninjas.com/v1/city?name="+ciudad, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
